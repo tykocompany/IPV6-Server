@@ -10,11 +10,9 @@ network:
   version: 2
   ethernets:
     ens33:  # Substitua "ens33" pelo nome da sua interface de rede
-      dhcp4: no
-      dhcp6: yes
-      addresses:
-        - "SEU_IPV6/64"  # Seu endereço IPv6
-      gateway6: "SEU GATEWAY"  # Gateway IPv6 padrão (verifique no roteador)
+      dhcp4: no  # Desativa o DHCP para IPv4
+      dhcp6: yes  # Ativa o DHCP para IPv6
+      accept-ra: true  # Aceita anúncios de roteador (SLAAC)
       nameservers:
         addresses:
           - "2001:4860:4860::8888"  # Google DNS IPv6
